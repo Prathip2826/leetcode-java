@@ -64,12 +64,11 @@
 </div>
 
 ---
-
-## 🟢 GeeksforGeeks Stats
+## 🟩 GeeksforGeeks Stats
 <div align="center">
-
+  
 <a href="https://www.geeksforgeeks.org/user/prathipro4el/">
-  <img src="https://geeksforgeeks-stats-card.vercel.app/?username=prathipro4el" alt="GFG Stats Card" />
+<img src="https://geeks-for-geeks-stats-card.vercel.app/?username=prathipro4el" />
 </a>
 
 </div>
