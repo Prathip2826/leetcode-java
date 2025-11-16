@@ -42,6 +42,8 @@ Check out my full collection here: [LeetCode Java Repo](https://github.com/Prath
 ---
 
 ### 📊 GitHub Stats
+<p align="center"> <img src="https://github-readme-stats.vercel.app/api?username=Prathip&show_icons=true&theme=tokyonight" alt="GitHub Stats" /> </p> 
+<p align="center"> <img src="https://github-readme-streak-stats.herokuapp.com/?user=Prathip&theme=tokyonight" alt="GitHub Streak" /> </p>
 <p align="center">
   <img src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=Prathip2826&show_icons=true&theme=tokyonight" alt="GitHub Stats" />
 </p>
