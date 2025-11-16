@@ -65,6 +65,17 @@
 
 ---
 
+## 🟢 GeeksforGeeks Stats
+<div align="center">
+
+<a href="https://www.geeksforgeeks.org/user/prathipro4el/">
+  <img src="https://geeksforgeeks-stats-card.vercel.app/?username=prathipro4el" alt="GFG Stats Card" />
+</a>
+
+</div>
+
+---
+
 ## 🏆 Badges & Achievements
 - ✔️ Solved 300+ LeetCode problems
 - ✔️ Consistent competitive programmer
