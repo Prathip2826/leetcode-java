@@ -1,0 +1,22 @@
+public class Solution {
+    public int countPalindromicSubsequence(String s) {
+        int n = s.length();
+        int result = 0;
+
+        // Iterate over all possible characters 'a' to 'z'
+        for (char c = 'a'; c <= 'z'; c++) {
+            int left = s.indexOf(c);
+            int right = s.lastIndexOf(c);
+
+            if (left != -1 && right != -1 && left < right) {
+                // Collect all unique middle characters
+                HashSet<Character> set = new HashSet<>();
+                for (int i = left + 1; i < right; i++) {
+                    set.add(s.charAt(i));
+                }
+                result += set.size();
+            }
+        }
+        return result;
+    }
+}
