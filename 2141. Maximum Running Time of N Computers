@@ -1,0 +1,19 @@
+class Solution {
+    public long maxRunTime(int n, int[] batteries) {
+        long sum = 0;
+        for (int b : batteries){
+             sum += b;
+        }
+        Arrays.sort(batteries);
+        
+        // Remove batteries that are too large compared to average
+        int k = batteries.length - 1;
+        while (batteries[k] > sum / n) {
+            sum -= batteries[k];
+            k--;
+            n--;
+        }
+        
+        return sum / n;
+    }
+}
