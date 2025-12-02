@@ -1,0 +1,24 @@
+class Solution {
+    public void wiggleSort(int[] nums) {
+        int n=nums.length;
+        int[] map=new int[5001];
+        for (int num:nums){
+            map[num]++;
+        }
+        int ptr=5000;
+        for (int i=1;i<n;i+=2){
+            while (map[ptr]==0){
+                ptr--;
+            }
+            nums[i]=ptr;
+            map[ptr]--;
+        }
+        for (int i=0;i<n;i+=2){
+            while (map[ptr]==0){
+                ptr--;
+            }
+            nums[i]=ptr;
+            map[ptr]--;
+        }
+    }
+}
