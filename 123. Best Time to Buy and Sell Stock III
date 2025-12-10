@@ -1,0 +1,16 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+        int f1 = Integer.MIN_VALUE;
+        int f2 = 0;
+        int f3 = Integer.MIN_VALUE;
+        int f4 = 0;
+
+        for(int p:prices){
+            f1 = Math.max(f1 , -p);
+            f2 = Math.max(f2 , f1 + p);
+            f3 = Math.max(f3 , f2 - p);
+            f4 = Math.max(f4 , f3 + p);
+        }
+        return f4;
+    }
+}
