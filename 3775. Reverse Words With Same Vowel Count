@@ -1,0 +1,24 @@
+class Solution {
+    public String reverseWords(String s) {
+        String[] w = s.split(" ");
+        int f = count(w[0]);
+        for(int i=1;i<w.length;i++){
+            if(count(w[i])==f){
+                w[i] = new StringBuilder(w[i]).reverse().toString();
+            }
+        }
+        return String.join(" ",w);
+    }
+    private int count(String word){
+        int c = 0;
+        for(char g:word.toCharArray()){
+            if(isvowel(g)){
+                c++;
+            }
+        }
+        return c;
+    }
+    private boolean isvowel(char c){
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+    }
+}
