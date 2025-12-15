@@ -1,0 +1,16 @@
+class Solution {
+    public long getDescentPeriods(int[] prices) {
+        long tot = 1;// 1st day always count
+        long cur = 1;// descent per end at cur day
+
+        for(int i=1;i<prices.length;i++){
+            if(prices[i] == prices[i-1]-1){
+                cur += 1;//extennd 
+            }else{
+                cur = 1;//reset
+            }
+            tot += cur;
+        }
+        return tot;
+    }
+}
