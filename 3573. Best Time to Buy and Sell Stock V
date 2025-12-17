@@ -1,0 +1,32 @@
+class Solution {
+    public long maximumProfit(int[] prices, int k) {
+        int n = prices.length;
+        long neg = Long.MIN_VALUE / 4;
+
+        long[] free = new long[k+1];
+        long[] longpos = new long[k+1];
+        long[] shpos = new long[k+1];
+
+        for(int t = 0;t <= k;t++){
+            longpos[t] = neg;
+            shpos[t] = neg;
+        }
+
+        for(int p:prices){
+            for(int t=k;t>=1;t--){
+                free[t] = Math.max(free[t] , longpos[t] + p);
+
+                free[t] = Math.max(free[t] , shpos[t] - p);
+
+                longpos[t] = Math.max(longpos[t] , free[t-1] - p);
+
+                shpos[t] = Math.max(shpos[t] , free[t-1] + p);
+            }
+        }
+        long ans = 0;
+        for(int i=0;i<=k;i++){
+            ans = Math.max(ans , free[i]);
+        }
+        return ans;
+    }
+}
