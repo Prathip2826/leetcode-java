@@ -1,0 +1,56 @@
+import java.util.*;
+
+class Solution {
+    public ArrayList<Integer> countXInRange(int[] arr, int[][] queries) {
+        ArrayList<Integer> result = new ArrayList<>();
+        
+        for (int[] q : queries) {
+            int l = q[0], r = q[1], x = q[2];
+            
+            // Find first occurrence of x (lower bound)
+            int first = lowerBound(arr, x);
+            // Find index just after last occurrence of x (upper bound)
+            int last = upperBound(arr, x) - 1;
+            
+            // If x not present at all
+            if (first == arr.length || arr[first] != x) {
+                result.add(0);
+                continue;
+            }
+            
+            // Clamp to query range
+            if (last < l || first > r) {
+                result.add(0);
+                continue;
+            }
+            
+            int left = Math.max(first, l);
+            int right = Math.min(last, r);
+            result.add(Math.max(0, right - left + 1));
+        }
+        
+        return result;
+    }
+    
+    // First index >= target
+    private int lowerBound(int[] arr, int target) {
+        int low = 0, high = arr.length;
+        while (low < high) {
+            int mid = (low + high) / 2;
+            if (arr[mid] < target) low = mid + 1;
+            else high = mid;
+        }
+        return low;
+    }
+    
+    // First index > target
+    private int upperBound(int[] arr, int target) {
+        int low = 0, high = arr.length;
+        while (low < high) {
+            int mid = (low + high) / 2;
+            if (arr[mid] <= target) low = mid + 1;
+            else high = mid;
+        }
+        return low;
+    }
+}
