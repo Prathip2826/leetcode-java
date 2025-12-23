@@ -1,0 +1,21 @@
+class Solution {
+    public int maxTwoEvents(int[][] events) {
+        Arrays.sort(events, (a,b)-> a[0] - b[0]);
+
+        int[][] endsort = events.clone();
+        Arrays.sort(endsort, (a,b)-> a[1] - b[1]);
+
+        int n = events.length;
+        int res = 0, j = 0, max = 0;
+
+        for(int i=0;i<n;i++){
+            while(j<n && endsort[j][1] < events[i][0]){
+                max = Math.max(max, endsort[j][2]);
+                j++;
+            }
+            res = Math.max(res, events[i][2] + max);
+            res = Math.max(res, events[i][2]);
+        }
+        return res;
+    }
+}
