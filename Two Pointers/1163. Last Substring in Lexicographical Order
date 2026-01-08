@@ -1,0 +1,21 @@
+class Solution {
+    public String lastSubstring(String s) {
+        int i = 0, j = 1, k = 0,n = s.length();
+        char[] c = s.toCharArray();
+
+        while(j+k<n){
+            if(c[i+k] == c[j+k]){
+                k++;
+            }
+            else if(c[i+k]>c[j+k]){
+                j=j+k+1;
+                k=0;
+            }else{
+                i = Math.max(i+k+1,j);
+                j=i+1;
+                k=0;
+            }
+        }
+        return s.substring(i);
+    }
+}
